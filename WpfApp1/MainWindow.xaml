@@ -55,6 +55,8 @@
                         </FlowDocument>
                     </RichTextBox>
                     <TextBlock HorizontalAlignment="Left" Margin="37,283,0,0" TextWrapping="Wrap" Text="执行日志：" VerticalAlignment="Top" FontSize="14" Height="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="37,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14" Text="Province"/>
+                    <TextBox x:Name="provinceBox" HorizontalAlignment="Left" Height="18" Margin="122,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                 </Grid>
             </TabItem>
         </TabControl>

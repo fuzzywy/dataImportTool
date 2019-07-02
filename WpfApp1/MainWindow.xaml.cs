@@ -175,6 +175,7 @@ namespace WpfApp1
             string pwd = pwd_import.Text;
             string database = database_import.Text;
             string dirPath = importFilePath.Text;
+            string province = provinceBox.Text;
 
 
             MyFile mf = new MyFile();
@@ -211,7 +212,15 @@ namespace WpfApp1
                 string day_column = dt_day.Rows[0][0].ToString();
 
                 //先删除所选日期的数据
-                string deleteSql = "delete from `" + tableName + "` where " + day_column + "='" + day_id + "';";
+                string deleteSql = "";
+                if (province == "")
+                {
+                    deleteSql = "delete from `" + tableName + "` where " + day_column + "='" + day_id + "';";
+                } else
+                {
+                    deleteSql = "delete from `" + tableName + "` where " + day_column + "='" + day_id + "' and province = '"+province+"';";
+                }
+                
                 mysql.ExecuteSql(deleteSql, conn);
                 //导入数据
                 string loadFileSql = "LOAD DATA LOCAL INFILE  '"+filePath+"' INTO TABLE "+tableName+" FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' ; ";
