@@ -103,12 +103,21 @@ namespace WpfApp1
                 //获取数据
                 sql = "select * from " + tableName + " where " + day_column + " = '" + day_id + "'";
                 DataTable table = mysql.QuerySql(sql, conn);
-                int columns = table.Columns.Count;
-                
+                int columnCount = table.Columns.Count;
+
+                string filedRow = "";
+                DataColumnCollection columns = table.Columns;
+                foreach (DataColumn column in columns)
+                {
+                    filedRow += column.ColumnName + ",";
+                }
+                filedRow = filedRow.Substring(0, filedRow.Length - 1);
+                writer.WriteLine(filedRow);
+
                 foreach (DataRow values in table.Rows)
                 {
                     string oneRowStr = "";
-                    for (int i = 0;i < columns;i++)
+                    for (int i = 0;i < columnCount; i++)
                     {
                         oneRowStr += values[i].ToString()+"," ;
                     }
@@ -223,7 +232,7 @@ namespace WpfApp1
                 
                 mysql.ExecuteSql(deleteSql, conn);
                 //导入数据
-                string loadFileSql = "LOAD DATA LOCAL INFILE  '"+filePath+"' INTO TABLE "+tableName+" FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' ; ";
+                string loadFileSql = "LOAD DATA LOCAL INFILE  '"+filePath+"' INTO TABLE "+tableName+ " FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 LINES; ";
                 loadFileSql = loadFileSql.Replace("\\", "/");
                 mysql.ExecuteSql(loadFileSql, conn);
                 this.WriteImportLog(tableName+" 导入完成", "info");
