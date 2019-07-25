@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Configuration;
 
 
 
@@ -30,8 +31,8 @@ namespace WpfApp1
             
             InitializeComponent();
             this.MainWindow_Load(null,null);
-            selectDate.SelectedDatesChanged += SelectDate_SelectedDatesChanged;
-            dir_export.Text = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            
+            
         }
 
         private void SelectDate_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
@@ -46,6 +47,21 @@ namespace WpfApp1
         {
             DateTime date = DateTime.Now;
             dateBox.Text = date.Date.AddDays(-1).ToString("yyyy-MM-dd");
+            selectDate.SelectedDatesChanged += SelectDate_SelectedDatesChanged;
+            dir_export.Text = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+
+            host_export.Text = ConfigurationManager.AppSettings["export_host"];
+            port_export.Text = ConfigurationManager.AppSettings["export_port"];
+            user_export.Text = ConfigurationManager.AppSettings["export_user"];
+            pwd_export.Text = ConfigurationManager.AppSettings["export_pwd"];
+            database_export.Text = ConfigurationManager.AppSettings["export_database"];
+
+            host_import.Text = ConfigurationManager.AppSettings["import_host"];
+            port_import.Text = ConfigurationManager.AppSettings["import_port"];
+            user_import.Text = ConfigurationManager.AppSettings["import_user"];
+            pwd_import.Text = ConfigurationManager.AppSettings["import_pwd"];
+            database_import.Text = ConfigurationManager.AppSettings["import_database"];
+            provinceBox.Text = ConfigurationManager.AppSettings["import_province"];
         }
 
         private void ExportDataBtn_Click(object sender, RoutedEventArgs e)
@@ -131,6 +147,16 @@ namespace WpfApp1
             
             this.WriteExportLog("执行完成", "info");
             MessageBox.Show("导出数据已经完成！");
+
+            //把连接信息写入配置文件，方便之后使用
+            Configuration cfa = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            cfa.AppSettings.Settings["export_host"].Value = host;
+            cfa.AppSettings.Settings["export_port"].Value = port;
+            cfa.AppSettings.Settings["export_user"].Value = user;
+            cfa.AppSettings.Settings["export_pwd"].Value = pwd;
+            cfa.AppSettings.Settings["export_database"].Value = database;
+            cfa.Save(ConfigurationSaveMode.Modified);
+
         }
 
         private void WriteExportLog(string msg,string infoLevel)
@@ -150,17 +176,6 @@ namespace WpfApp1
             logBox_import.Document.Blocks.Add(para);
         }
 
-        //选择文件
-        //private void OpenFileBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    // 在WPF中， OpenFileDialog位于Microsoft.Win32名称空间
-        //    Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-        //    dialog.Filter = "SQL文件|*.sql";
-        //    if (dialog.ShowDialog() == true)
-        //    {
-        //        importFilePath.Text = dialog.FileName;
-        //    }
-        //}
 
         private void OpenFileBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -240,6 +255,16 @@ namespace WpfApp1
 
             this.WriteImportLog("导入结束", "info");
             MessageBox.Show("导入数据已经完成！");
+
+            //把连接信息写入配置文件，方便之后使用
+            Configuration cfa = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            cfa.AppSettings.Settings["import_host"].Value = host;
+            cfa.AppSettings.Settings["import_port"].Value = port;
+            cfa.AppSettings.Settings["import_user"].Value = user;
+            cfa.AppSettings.Settings["import_pwd"].Value = pwd;
+            cfa.AppSettings.Settings["import_database"].Value = database;
+            cfa.AppSettings.Settings["import_province"].Value = province;
+            cfa.Save(ConfigurationSaveMode.Modified);
         }
     }
 }

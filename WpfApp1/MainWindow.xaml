@@ -15,15 +15,15 @@
                     <Button x:Name="exportDataBtn" Content="导出数据" HorizontalAlignment="Left" Margin="413,256,0,0" VerticalAlignment="Top" Width="75" Click="ExportDataBtn_Click" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="37,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="54" FontSize="14" RenderTransformOrigin="1.333,0.556"><Run Text="时间"/><Run Text="："/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="413,37,0,0" TextWrapping="Wrap" Text="Host：" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"/>
-                    <TextBox x:Name="host_export" HorizontalAlignment="Left" Height="18" Margin="493,37,0,0" TextWrapping="Wrap" Text="10.39.148.186" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="host_export" HorizontalAlignment="Left" Height="18" Margin="493,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="413,71,0,0" TextWrapping="Wrap" Text="Port：" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"/>
-                    <TextBox x:Name="port_export" HorizontalAlignment="Left" Height="18" Margin="493,71,0,0" TextWrapping="Wrap" Text="3306" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="port_export" HorizontalAlignment="Left" Height="18" Margin="493,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="413,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"><Run Text="User："/><LineBreak/><Run/></TextBlock>
-                    <TextBox x:Name="user_export" HorizontalAlignment="Left" Height="18" Margin="493,108,0,0" TextWrapping="Wrap" Text="root" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="user_export" HorizontalAlignment="Left" Height="18" Margin="493,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="413,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"><Run Text="Pwd"/><Run Text="："/></TextBlock>
-                    <TextBox x:Name="pwd_export" HorizontalAlignment="Left" Height="18" Margin="493,145,0,0" TextWrapping="Wrap" Text="mongs" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="pwd_export" HorizontalAlignment="Left" Height="18" Margin="493,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="413,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"><Run Text="Database"/><Run Text="："/><LineBreak/><Run/><Run Text="："/></TextBlock>
-                    <TextBox x:Name="database_export" HorizontalAlignment="Left" Height="18" Margin="493,179,0,0" TextWrapping="Wrap" Text="ENIQAggregation" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="database_export" HorizontalAlignment="Left" Height="18" Margin="493,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <RichTextBox x:Name="logBox" HorizontalAlignment="Left" Height="151" Margin="107,283,0,0" VerticalAlignment="Top" Width="669" FontSize="14" IsReadOnly="True">
                         <FlowDocument>
                             <Paragraph/>
@@ -37,15 +37,15 @@
             <TabItem Header="导入" HorizontalAlignment="Left" Width="80">
                 <Grid Background="#FFE5E5E5" Width="785">
                     <TextBlock HorizontalAlignment="Left" Margin="37,36,0,0" TextWrapping="Wrap" Text="Host：" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"/>
-                    <TextBox x:Name="host_import" HorizontalAlignment="Left" Height="18" Margin="122,36,0,0" TextWrapping="Wrap" Text="120.77.223.9" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="host_import" HorizontalAlignment="Left" Height="18" Margin="122,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="37,70,0,0" TextWrapping="Wrap" Text="Port：" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"/>
-                    <TextBox x:Name="port_import" HorizontalAlignment="Left" Height="18" Margin="122,70,0,0" TextWrapping="Wrap" Text="3306" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="port_import" HorizontalAlignment="Left" Height="18" Margin="122,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="37,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"><Run Text="User："/><LineBreak/><Run/></TextBlock>
-                    <TextBox x:Name="user_import" HorizontalAlignment="Left" Height="18" Margin="122,107,0,0" TextWrapping="Wrap" Text="root" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="user_import" HorizontalAlignment="Left" Height="18" Margin="122,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="37,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"><Run Text="Pwd"/><Run Text="："/></TextBlock>
-                    <TextBox x:Name="pwd_import" HorizontalAlignment="Left" Height="18" Margin="122,144,0,0" TextWrapping="Wrap" Text="mongs" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="pwd_import" HorizontalAlignment="Left" Height="18" Margin="122,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBlock HorizontalAlignment="Left" Margin="37,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.018,-1.067" Height="18" Width="80" FontSize="14"><Run Text="Database"/><Run Text="："/><LineBreak/><Run/><Run Text="："/></TextBlock>
-                    <TextBox x:Name="database_import" HorizontalAlignment="Left" Height="18" Margin="122,177,0,0" TextWrapping="Wrap" Text="ENIQAggregation" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                    <TextBox x:Name="database_import" HorizontalAlignment="Left" Height="18" Margin="122,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="14"/>
                     <TextBox x:Name="importFilePath" HorizontalAlignment="Left" Height="18" Margin="372,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="14" IsReadOnly="True"/>
                     <Button x:Name="openFileBtn" Content="打开文件夹" HorizontalAlignment="Left" Margin="672,36,0,0" VerticalAlignment="Top" Width="75" Height="18" Click="OpenFileBtn_Click" RenderTransformOrigin="1.893,0.444"/>
                     <Button x:Name="importDataBtn" Content="导入数据" HorizontalAlignment="Left" Margin="372,70,0,0" VerticalAlignment="Top" Width="75" Height="18" Click="ImportDataBtn_Click"/>
