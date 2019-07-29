@@ -89,7 +89,10 @@ namespace WpfApp1
             MySQLConn mysql = new MySQLConn();
             MySqlConnection conn = mysql.GetMySqlConn(host, port, user, pwd, database);
             DataTable dt = mysql.QuerySql(sql, conn);
-            if (dt.Rows.Count == 0)
+
+            string sql1 = "select * from B_K_LTE_FDD_HOUR where day_id = '" + day_id + "'";
+            DataTable dt1 = mysql.QuerySql(sql1, conn);
+            if (dt.Rows.Count == 0 && dt1.Rows.Count == 0)
             {
                 this.WriteExportLog("该天无数据", "error");
                 MessageBox.Show("选择日期没有数据，请重新选择");
