@@ -30,4 +30,3 @@ C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAgg
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAggregation.csproj.CopyComplete
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1.pdb
-C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAggregation.csprojAssemblyReference.cache

@@ -86,22 +86,28 @@ namespace WpfApp1
             }
             //判断是否有这天的数据
             string sql = "select * from B_K_LTE_TDD_HOUR where day_id = '"+day_id+"'";
+            string sql1 = "select * from B_K_LTE_FDD_HOUR where day_id = '" + day_id + "'";
             MySQLConn mysql = new MySQLConn();
             MySqlConnection conn = mysql.GetMySqlConn(host, port, user, pwd, database);
-            DataTable dt = mysql.QuerySql(sql, conn);
-
-            string sql1 = "select * from B_K_LTE_FDD_HOUR where day_id = '" + day_id + "'";
-            DataTable dt1 = mysql.QuerySql(sql1, conn);
-            if (dt.Rows.Count == 0 && dt1.Rows.Count == 0)
+            try {
+                DataTable dt = mysql.QuerySql(sql, conn);
+                DataTable dt1 = mysql.QuerySql(sql1, conn);
+                if (dt.Rows.Count == 0 && dt1.Rows.Count == 0)
+                {
+                    this.WriteExportLog("该天无数据", "error");
+                    MessageBox.Show("选择日期没有数据，请重新选择");
+                    return;
+                }
+            }
+            catch (Exception ex)
             {
-                this.WriteExportLog("该天无数据", "error");
-                MessageBox.Show("选择日期没有数据，请重新选择");
+                MessageBox.Show("发生异常: " + ex.Message, "连接异常", MessageBoxButton.OK, MessageBoxImage.Warning);
+                this.WriteExportLog("连接异常", "error");
                 return;
             }
             //创建文件夹
             dir += @"\"+day_id;
             Directory.CreateDirectory(dir);
-
             
             //获取全部表名
             sql = "select table_name from information_schema.tables where table_schema = '"+ database + "' and table_name like 'B_K_%' order by table_name;";
@@ -235,8 +241,19 @@ namespace WpfApp1
 
                 //获取日期字段是day还是day_id
                 string sql = "select COLUMN_NAME from information_schema.COLUMNS where table_name = '" + tableName + "' and table_schema = '" + database + "' and COLUMN_NAME like 'day%' ;";
-                DataTable dt_day = mysql.QuerySql(sql, conn);
-                string day_column = dt_day.Rows[0][0].ToString();
+                string day_column = "";
+                try
+                {
+                    DataTable dt_day = mysql.QuerySql(sql, conn);
+                    day_column = dt_day.Rows[0][0].ToString();
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("发生异常: " + ex.Message, "连接异常", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.WriteImportLog("连接异常", "error");
+                    return;
+                }
 
                 //先删除所选日期的数据
                 string deleteSql = "";
