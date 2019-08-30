@@ -24,6 +24,7 @@ namespace WpfApp1
         {
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandTimeout = 0;
             cmd.CommandType = System.Data.CommandType.Text;
             DataTable dt = new DataTable();
             MySqlDataAdapter msda = new MySqlDataAdapter(cmd);
