@@ -58,11 +58,18 @@ namespace WpfApp1
 
         public void ExecuteSql(string sql, MySqlConnection conn)
         {
+            //conn.Open();
+            //MySqlScript script = new MySqlScript(conn);
+            //script.Query = sql;
+            //script.Execute();
+            //conn.Close();
+
             conn.Open();
-            MySqlScript script = new MySqlScript(conn);
-            script.Query = sql;
-            script.Execute();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandTimeout = 0;
+            cmd.ExecuteNonQuery();
             conn.Close();
+
         }
 
     }
