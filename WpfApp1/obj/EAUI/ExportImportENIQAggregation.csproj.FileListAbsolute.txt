@@ -1,0 +1,12 @@
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\bin\EAUI\WpfApp1.exe.config
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\bin\EAUI\WpfApp1.exe
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\MainWindow.g.cs
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\App.g.cs
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\WpfApp1_MarkupCompile.cache
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\WpfApp1_MarkupCompile.lref
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\MainWindow.baml
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\WpfApp1.g.resources
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\WpfApp1.Properties.Resources.resources
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\ExportImportENIQAggregation.csproj.GenerateResource.cache
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\ExportImportENIQAggregation.csproj.CoreCompileInputs.cache
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\EAUI\WpfApp1.exe

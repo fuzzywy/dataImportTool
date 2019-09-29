@@ -89,6 +89,7 @@ namespace WpfApp1
             string sql1 = "select * from B_K_LTE_FDD_HOUR where day_id = '" + day_id + "'";
             MySQLConn mysql = new MySQLConn();
             MySqlConnection conn = mysql.GetMySqlConn(host, port, user, pwd, database);
+            conn.Open();
             try {
                 DataTable dt = mysql.QuerySql(sql, conn);
                 DataTable dt1 = mysql.QuerySql(sql1, conn);
@@ -153,7 +154,7 @@ namespace WpfApp1
                 this.WriteExportLog("表"+tableName+"导出完成", "info");
                 writer.Close();
             }
-            
+            conn.Close();
             this.WriteExportLog("执行完成", "info");
             MessageBox.Show("导出数据已经完成！");
 
@@ -233,6 +234,7 @@ namespace WpfApp1
             }
             MySQLConn mysql = new MySQLConn();
             MySqlConnection conn = mysql.GetMySqlConn(host, port, user, pwd, database);
+            conn.Open();
             this.WriteImportLog("开始导入", "info");
             foreach (FileInfo fl in fileList)
             {
@@ -272,7 +274,7 @@ namespace WpfApp1
                 mysql.ExecuteSql(loadFileSql, conn);
                 this.WriteImportLog(tableName+" 导入完成", "info");
             }
-
+            conn.Close();
             this.WriteImportLog("导入结束", "info");
             MessageBox.Show("导入数据已经完成！");
 

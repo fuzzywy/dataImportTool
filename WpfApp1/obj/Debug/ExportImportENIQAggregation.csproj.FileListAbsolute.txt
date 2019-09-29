@@ -17,7 +17,6 @@ C:\Users\xyjlx\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\bin\Debug\WpfApp1.exe.config
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\bin\Debug\WpfApp1.exe
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\bin\Debug\WpfApp1.pdb
-C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\bin\Debug\MySql.Data.dll
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\MainWindow.g.cs
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\App.g.cs
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
@@ -27,6 +26,6 @@ C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1.g.resources
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAggregation.csproj.GenerateResource.cache
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAggregation.csproj.CoreCompileInputs.cache
-C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAggregation.csproj.CopyComplete
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\xyjlx\source\repos\dataImportTool\WpfApp1\obj\Debug\ExportImportENIQAggregation.csprojAssemblyReference.cache

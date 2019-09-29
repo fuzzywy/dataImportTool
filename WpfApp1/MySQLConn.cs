@@ -14,7 +14,7 @@ namespace WpfApp1
 
         public MySqlConnection GetMySqlConn(string host,string port,string user,string pwd,string database)
         {
-            string mySqlConn = "Max Pool Size = 512;Database=" + database+";Data Source="+host+";User Id="+user+";Password="+pwd+";pooling=false;CharSet=utf8;port="+port;
+            string mySqlConn = "Max Pool Size = 512;Database=" + database+";Data Source="+host+";User Id="+user+";Password="+pwd+";pooling=false;CharSet=utf8;port="+port+ ";Connection Timeout=2880000";
             MySqlConnection conn = new MySqlConnection(mySqlConn);
             return conn;
             
@@ -22,14 +22,14 @@ namespace WpfApp1
 
         public DataTable QuerySql(string sql, MySqlConnection conn)
         {
-            conn.Open();
+            //conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandTimeout = 0;
             cmd.CommandType = System.Data.CommandType.Text;
             DataTable dt = new DataTable();
             MySqlDataAdapter msda = new MySqlDataAdapter(cmd);
             msda.Fill(dt);
-            conn.Close();
+            //conn.Close();
             return dt;
         }
 
@@ -64,11 +64,11 @@ namespace WpfApp1
             //script.Execute();
             //conn.Close();
 
-            conn.Open();
+            //conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.CommandTimeout = 0;
+            cmd.CommandTimeout = 3600;
             cmd.ExecuteNonQuery();
-            conn.Close();
+            //conn.Close();
 
         }
 
